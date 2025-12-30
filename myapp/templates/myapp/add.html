@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+</head>
+<body>
+
+<h1>Add New Product</h1>
+
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    <p>
+        <label>Product Name:<br>
+            <input type="text" name="name" required>
+        </label>
+    </p>
+    <p>
+        <label>Price:<br>
+            <input type="number" name="price" min="0" step="0.01" required>
+        </label>
+    </p>
+    <p>
+        <label>Stock Quantity:<br>
+            <input type="number" name="stock" min="0" required>
+        </label>
+    </p>
+    <p>
+        <button type="submit">Add Product</button>
+    </p>
+</form>
+
+<hr>
+
+<h2>Current Products</h2>
+
+{% if products %}
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+    </tr>
+    {% for product in products %}
+    <tr>
+        <td>{{ product.name }}</td>
+        <td>${{ product.price }}</td>
+        <td>{{ product.stock }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No products in inventory.</p>
+{% endif %}
+
+<p>
+    <a href="{% url 'home' %}">Back to Home</a>
+</p>
+
+</body>
+</html>

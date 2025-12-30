@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <h1>Bhuwan's World</h1>
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </nav>
+</header>
+
+<div id="bigbox">
+    <div class="box">
+        <img src="{% static 'myapp/available.jpg' %}" alt="Available Products">
+        <a href="{% url 'available_products' %}">Available Product</a>
+    </div>
+
+    <div class="box">
+        <img src="{% static 'myapp/Add.png' %}" alt="Add Product">
+        <a href="{% url 'add_product' %}">Add Product</a>
+    </div>
+
+    <div class="box">
+        <img src="{% static 'myapp/soldout.png' %}" alt="Sold Out">
+        <a href="{% url 'soldout' %}">Recent SoldOut</a>
+    </div>
+
+    <div class="box">
+        <img src="{% static 'myapp/billing.jpg' %}" alt="Billing">
+        <a href="{% url 'billing' %}">Selling & Billing</a>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 Bhuwan's World
+</footer>
+</body>
+</html>
