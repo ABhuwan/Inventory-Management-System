@@ -80,13 +80,16 @@ def add_product_view(request):
 
 @login_required
 def available_products_view(request):
-    products = Product.objects.filter(stock__gt=0)
+    products = Product.objects.filter(user=request.user)
     return render(request, "myapp/available.html", {"products": products})
 
 # ---------------- BILLING ----------------
+
+
 @login_required
 def billing_view(request):
-    products = Product.objects.filter(stock__gt=0)
+    products = Product.objects.filter(user=request.user)
+    sold_items = SoldItem.objects.filter(user=request.user).order_by('-sold_at')  # Add this
 
     if request.method == "POST":
         product_id = request.POST.get('product_id')
@@ -97,7 +100,7 @@ def billing_view(request):
             return redirect('billing')
 
         try:
-            product = Product.objects.get(id=product_id)
+            product = Product.objects.get(id=product_id, user=request.user)
         except Product.DoesNotExist:
             messages.error(request, "Product not found.")
             return redirect('billing')
@@ -106,25 +109,28 @@ def billing_view(request):
             messages.error(request, f"Not enough stock for {product.name}")
             return redirect('billing')
 
-        # Update stock
         product.stock -= quantity
         product.save()
 
-        # Record sale
         total_price = quantity * product.price
         SoldItem.objects.create(
             product=product,
             quantity=quantity,
-            total_price=total_price
+            total_price=total_price,
+            user=request.user
         )
 
-        messages.success(request, f"Sold {quantity} of {product.name} for ${total_price}")
+        messages.success(request, f"Sold {quantity} x {product.name} successfully!")
         return redirect('billing')
 
-    bills = SoldItem.objects.order_by('-sold_at')
-    return render(request, 'myapp/billing.html', {'products': products, 'bills': bills})
+    return render(request, 'myapp/billing.html', {
+        'products': products,
+        'sold_items': sold_items  # Pass sold items to template
+    })
+
+
 
 @login_required
 def soldout_view(request):
-    sold_items = SoldItem.objects.order_by('-sold_at')
+    sold_items = SoldItem.objects.filter(user=request.user).order_by('-sold_at')
     return render(request, 'myapp/soldout.html', {'sold_items': sold_items})

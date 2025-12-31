@@ -1,0 +1,144 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+h2 {
+    margin: 2rem 0 1rem;
+    color: #333;
+}
+
+/* ===== FORM ===== */
+form {
+    background-color: white;
+    padding: 2rem 2.5rem;
+    border-radius: 1rem;
+    width: 360px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== FORM GROUP ===== */
+form p {
+    margin-bottom: 1.2rem;
+}
+
+/* ===== LABEL ===== */
+label {
+    font-weight: bold;
+    color: #444;
+}
+
+/* ===== INPUT ===== */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #8b4513;
+}
+
+/* ===== BUTTON ===== */
+button {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #8b4513;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5c2f0d;
+}
+
+/* ===== MESSAGES ===== */
+ul {
+    list-style: none;
+    margin-bottom: 1rem;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ===== DIVIDER ===== */
+hr {
+    width: 80%;
+    margin: 2.5rem 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+/* ===== TABLE ===== */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 700px;
+    background-color: white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 0.8rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #8b4513;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* ===== EMPTY MESSAGE ===== */
+p {
+    margin-top: 1rem;
+}
+
+/* ===== BACK LINK ===== */
+a {
+    margin-top: 2rem;
+    text-decoration: none;
+    color: #5c2f0d;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}

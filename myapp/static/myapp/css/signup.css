@@ -1,0 +1,106 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== ADMIN LINK ===== */
+#admin {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+}
+
+#admin a {
+    text-decoration: none;
+    color: #5c2f0d;
+    font-weight: bold;
+}
+
+#admin a:hover {
+    text-decoration: underline;
+}
+
+/* ===== HEADING ===== */
+h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* ===== FORM ===== */
+form {
+    background-color: white;
+    padding: 2.2rem 2.5rem;
+    border-radius: 1rem;
+    width: 340px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* ===== INPUT ===== */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.65rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #8b4513;
+}
+
+/* ===== BUTTON ===== */
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #8b4513;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5c2f0d;
+}
+
+/* ===== MESSAGES ===== */
+ul {
+    list-style: none;
+    margin-bottom: 1rem;
+    color: red;
+    text-align: center;
+}
+
+/* ===== LOGIN LINK ===== */
+a {
+    margin-top: 1.2rem;
+    text-decoration: none;
+    color: #5c2f0d;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}

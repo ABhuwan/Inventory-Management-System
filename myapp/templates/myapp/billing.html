@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Billing</title>
+      <link rel="stylesheet" href="{% static 'myapp/css/billing.css' %}">
 </head>
 <body>
 <h1>Sell Products</h1>
@@ -31,27 +32,7 @@
 <p>No products available.</p>
 {% endif %}
 
-<h2>Recent Bills</h2>
-{% if bills %}
-<table border="1" cellpadding="5" cellspacing="0">
-    <tr>
-        <th>Product</th>
-        <th>Quantity</th>
-        <th>Total Price</th>
-        <th>Sold At</th>
-    </tr>
-    {% for bill in bills %}
-    <tr>
-        <td>{{ bill.product.name }}</td>
-        <td>{{ bill.quantity }}</td>
-        <td>${{ bill.total_price }}</td>
-        <td>{{ bill.sold_at }}</td>
-    </tr>
-    {% endfor %}
-</table>
-{% else %}
-<p>No bills yet.</p>
-{% endif %}
+<i>Bill is on the Way:</i>
 
 </body>
 </html>
