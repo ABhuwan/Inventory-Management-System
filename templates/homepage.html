@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="homepage.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <a class="navbar-brand" href="#">Bhuwan's World</a>
+        <nav class="navbar">
+            <div class="container-fluid">
+
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link-active" aria-current="page" href="homepage.html">Home</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+
+
+
+                <button id="menuBtn" onclick="openOverlay()">
+
+                    <img src="blankphoto.webp" alt="User Photo" id="myphoto" width="30" height="30">
+
+                </button>
+                
+
+
+          
+
+
+    </div>
+
+
+
+    </nav>
+
+
+<div id="bigbox">
+
+    <div id="Box">
+
+ 
+
+
+
+
+        <div id="firstRow">
+            <div id="Box1">
+                <img src="images.jpg">
+                <a href="Available.html" class="Available">Available Product</a>
+            </div>
+            <div id="Box2">
+                <img src="Add.png" class="AddProduct" height="225">
+                <a href="Add.html" class="Add">Add Product</a>
+            </div>
+
+        </div>
+
+        <div id="secondRow">
+            <div id="Box3">
+                <img src="soldout.png" class="soldout" height=232>
+                <a href="soldout.html" class="sold">Recent SoldOut</a>
+            </div>
+            <div id="Box4">
+                <img src="billing.jpg" class="billing" height=232>
+                <a href="billing.html" class="SBilling">Selling & Billing</a>
+            </div>
+        </div>
+    </div>
+     <div id="menu">
+        
+         <button id="photoBtn">Photo</button>
+
+<input type="file" id="userphoto" accept="image/*" hidden>
+
+<img id="preview" style="max-width:200px; display:none; cursor:pointer;">
+
+
+       
+        <button id="profile">See all profiles</button>
+         <button id="settings">Settings & privacy</button>
+          <button id="Help">Help & Support</button>
+           <button id="feedback">Give Feedback</button>
+            <button id="logout" onclick="signin.html">LogOut</button>
+  
+</div>
+    </div>
+
+
+
+</div>
+
+
+
+    <script src="homepage.js"></script>
+
+
+
+</body>
+
+</html>
