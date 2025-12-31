@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+from django.http import HttpResponse
+from django.shortcuts import render
+
+def aboutus(request):
+    return HttpResponse("<h1>heading</h2>")
+
+def home(request):
+    return render(request, 'homepage.html')
+=======
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -132,5 +142,11 @@ def billing_view(request):
 
 @login_required
 def soldout_view(request):
+<<<<<<< HEAD
     sold_items = SoldItem.objects.filter(user=request.user).order_by('-sold_at')
     return render(request, 'myapp/soldout.html', {'sold_items': sold_items})
+=======
+    sold_items = SoldItem.objects.order_by('-sold_at')
+    return render(request, 'myapp/soldout.html', {'sold_items': sold_items})
+>>>>>>> 18b1b5ac48db31e36978a9dce696aaf42426a8ea
+>>>>>>> 24bf4e9471772f7a0bcfb919800161a2b21470aa
