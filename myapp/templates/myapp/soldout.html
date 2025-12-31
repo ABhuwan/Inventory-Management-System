@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sold Items</title>
+</head>
+
+<body>
+    <h1>Sold Items Record</h1> {% if sold_items %} <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>Sold At</th>
+        </tr> {% for item in sold_items %} <tr>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{ item.total_price }}</td>
+            <td>{{ item.sold_at }}</td>
+        </tr> {% endfor %}
+    </table> {% else %} <p>No items sold yet.</p> {% endif %}
+</body>
+
+</html>

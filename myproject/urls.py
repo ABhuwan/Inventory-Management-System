@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """
 URL configuration for myproject project.
 
@@ -16,26 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from.import views
+from django.urls import path,include
 
 urlpatterns = [
-    path("about-us/",views.aboutus),
-  
+    path('admin/', admin.site.urls),
+    path('',include('myapp.urls'))
 ]
-=======
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('signup/', views.signup_view, name='signup'),
-    path('login/', views.login_view, name='login'),
-    path('logout/', views.logout_view, name='logout'),
-    path('home/', views.home_view, name='home'),
-
-    path('available/', views.available_products_view, name='available_products'),
-    path('add/', views.add_product_view, name='add_product'),
-    path('soldout/', views.soldout_view, name='soldout'), 
-    path('billing/', views.billing_view, name='billing'),
-]
->>>>>>> 18b1b5ac48db31e36978a9dce696aaf42426a8ea

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Bhuwan's World</title>
+</head>
+<body>
+
+<div id="admin">
+    <a href="{% url 'admin:index' %}">Go to Admin</a>
+</div>
+    <h2>Login</h2>
+
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Username:<br>
+                <input type="text" name="username" placeholder="Username" required>
+            </label>
+        </p>
+        <p>
+            <label>Password:<br>
+                <input type="password" name="password" placeholder="Password" required>
+            </label>
+        </p>
+        <p>
+            <button type="submit">Login</button>
+        </p>
+    </form>
+
+    <p>
+        <a href="{% url 'signup' %}">Don't have an account? Sign Up</a>
+    </p>
+</body>
+</html>

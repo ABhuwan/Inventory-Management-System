@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Products</title>
+</head>
+<body>
+
+<h1>Available Products</h1>
+
+{% if products %}
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+    </tr>
+    {% for product in products %}
+    <tr>
+        <td>{{ product.name }}</td>
+        <td>${{ product.price }}</td>
+        <td>{{ product.stock }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No products available.</p>
+{% endif %}
+
+<p>
+    <a href="{% url 'home' %}">Back to Home</a>
+</p>
+
+</body>
+</html>
