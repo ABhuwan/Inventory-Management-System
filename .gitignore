@@ -1,33 +1,8 @@
-<<<<<<< HEAD
-# Database
-db.sqlite3
-
-# Python bytecode
+# Django
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-
-# Django static files
-staticfiles/
-media/
-
-# Virtual environments
-env/
-venv/
-
-# VS Code settings
-.vscode/
-
-# IDEs
-.idea/
-
-# Logs
-*.log
-
-# System files
-.DS_Store
-Thumbs.db
-=======
 db.sqlite3
->>>>>>> 24bf4e9471772f7a0bcfb919800161a2b21470aa
+.env
+
+# Static files
+staticfiles/
